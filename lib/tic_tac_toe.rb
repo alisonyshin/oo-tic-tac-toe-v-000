@@ -69,5 +69,8 @@ class TicTacToe
     @board.all?{|slot| slot == "X" || slot == "O"}
   end
 
+  def draw?(board)
+    full?(board) == TRUE && won?(board) == FALSE
+  end
 end
 
