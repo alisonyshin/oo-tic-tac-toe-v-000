@@ -72,9 +72,7 @@ class TicTacToe
     else
       false
     end
-      #[position_1,position_2,position_3].all? {|position| position == "X"}
-      #[position_1,position_2,position_3].all? {|position| position == "O"}
-    end
+  end
     return false
   end
 
