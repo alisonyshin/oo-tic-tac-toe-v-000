@@ -59,14 +59,14 @@ class TicTacToe
     @board.count{|token| token == "X" || token == "O"}
   end
     
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.detect do |win_combination|
     @board[win_combination[0]] == @board[win_combination[1]] && @board[win_combination[1]] == @board[win_combination[2]] && position_taken?(win_combination[0])
     end
   end
 
-  def full?(board)
-    board.all?{|slot| slot == "X" or slot == "O"}
+  def full?
+    @board.all?{|slot| slot == "X" || slot == "O"}
   end
 
 end
