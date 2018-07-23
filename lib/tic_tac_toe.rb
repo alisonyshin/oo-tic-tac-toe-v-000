@@ -77,6 +77,13 @@ class TicTacToe
     draw?|| won?
   end
 
+  def winner(board)
+    if over?(board) == TRUE
+      win_combination = won?(board)
+      winning_position_1 = win_combination[0]
+      winning_mark = board[winning_position_1]
+    end
+  end
 
 end
 
