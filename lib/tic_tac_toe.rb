@@ -51,27 +51,27 @@ class TicTacToe
     end
   end
     
-    def current_player
-      turn_count % 2 == 0 ? "X" : "O"
-    end
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
+  end
  
-    def turn_count
-      @board.count{|token| token == "X" || token == "O"}
-    end
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
     
-    def won?(board)
-      WIN_COMBINATIONS.each do |win_combination|
-      win_index_1 = win_combination[0]
-      win_index_2 = win_combination[1]
-      win_index_3 = win_combination[2]
-      position_1 = board[win_index_1]
-      position_2 = board[win_index_2]
-      position_3 = board[win_index_3]
-      if position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_index_1) == TRUE
-        return win_combination
-      else
-        false
-      end
+  def won?(board)
+    WIN_COMBINATIONS.each do |win_combination|
+    win_index_1 = win_combination[0]
+    win_index_2 = win_combination[1]
+    win_index_3 = win_combination[2]
+    position_1 = board[win_index_1]
+    position_2 = board[win_index_2]
+    position_3 = board[win_index_3]
+    if position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_index_1) == TRUE
+      return win_combination
+    else
+      false
+    end
       #[position_1,position_2,position_3].all? {|position| position == "X"}
       #[position_1,position_2,position_3].all? {|position| position == "O"}
     end
