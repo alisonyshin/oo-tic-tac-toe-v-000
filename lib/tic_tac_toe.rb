@@ -78,12 +78,17 @@ class TicTacToe
   end
 
   def winner
-    if over?
+    if winning_combo = over?
       win_combination = won?(board)
       winning_position_1 = win_combination[0]
       winning_mark = board[winning_position_1]
     end
   end
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
+end
 
 end
 
